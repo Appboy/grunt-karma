@@ -26,6 +26,12 @@
     "lodash": "^4.17.10"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/travis-cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@semantic-release/changelog": "5.0.1",
+    "@semantic-release/git": "9.0.0",
+    "@semantic-release/npm": "7.0.5",
     "eslint": "^5.4.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.14.0",
@@ -33,23 +39,35 @@
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-standard": "^3.1.0",
     "expect.js": "^0.3.1",
-    "grunt": "^1.0.1",
+    "grunt": "^1.1.0",
     "grunt-bump": "0.8.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-conventional-changelog": "^6.1.0",
     "grunt-conventional-github-releaser": "^1.0.0",
     "grunt-eslint": "^21.0.0",
     "grunt-npm": "0.0.2",
-    "karma": "^3.0.0",
+    "husky": "^4.2.3",
+    "karma": "^5.0.1",
     "karma-chrome-launcher": "^2.2.0",
     "karma-firefox-launcher": "^1.0.0",
     "karma-mocha": "1.x || ^0.2.0",
     "load-grunt-tasks": "^3.2.0",
-    "mocha": "^3.4.2"
+    "mocha": "^3.4.2",
+    "semantic-release": "17.0.4"
   },
   "peerDependencies": {
     "grunt": ">=0.4.x",
-    "karma": "^3.0.0 || ^4.0.0"
+    "karma": "^4.0.0 || ^5.0.0 || ^6.0.0"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "contributors": [
     "Dave Geddes <davidcgeddes@gmail.com>",
